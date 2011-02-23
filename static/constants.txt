@@ -1,0 +1,73 @@
+/* 
+possible subcategories: 
+----------------------
+enable      Used for options that enable or disable primary functions of a template
+dims        Dimensions of all kinds; pixels, widths, heights of images, frames, cells and so on.
+file        Files like background images, fonts and so on. Other options related to the file may also enter
+typo        Typography and related constants
+color       Color setup. Many colors will be found with related options in other categories though.
+links       Links: Targets typically
+language    Language specific options.
+Subcategories based on the default content elements:
+cheader,cheader_g,ctext,ctextpic,cimage,cbullets,ctable,cuploads,cmultimedia,cmailform,csearch,clogin,csplash,cmenu,cshortcut,clist,cscript,chtml
+These are all categories reserved for options that relate to content rendering for each type of tt_content element. See static_template "content (default)" and "styles.content (default)" for examples.
+
+possible data types (type=):
+---------------------------
+int [low-high]              integer, opt. in range "low" to "high"
+int+                        positive integer
+offset    [L1,L2,...L6]     comma-separated integers. Default is "x,y", but as comma separated parameters in brackets you can specify up to 6 labels being comma separated! If you wish to omit one of the last 4 fields, just don't enter a label for that element.
+color                       HTML color
+wrap                        HTML-code that is wrapped around some content.
+options [item1,item2,...]   Selectbox with values/labels item1, item2 etc. Commaseparated. Split by "=" also and in that case, first part is label, second is value
+boolean [truevalue]         Boolean, opt. you can define the value of "true", def.=1
+comment                     Boolean, checked= "", not-checked = "#".
+file [ext-list/IMAGE_EXT]   Selectorbox with resources. Opt. list allowed extensions (no space in list!), eg. "[ttf]" or "[txt,html,htm]". You can also enter "[IMAGE_EXT]" in which case the default image-extensions are listed. (used for datatype "imgResouce")
+string (the default)        Just a string value
+*/
+
+// Configuration for GSA PDF Docs, accesible through BE constant editor
+config.tx_ptgsapdfdocs {
+    
+    
+  // ***** GENERAL EXTENSION SETTINGS *****
+    
+    // Enable Features
+    # cat=pt_gsapdfdocs::general/enable/010; type=boolean; label=generate Invoice: Flag for generating Invoice after submitting the order.
+    generateInvoiceAfterOrderSubmit = 1
+
+    # cat=pt_gsapdfdocs::general/enable/020; type=string; label=Document Storage Pid: Pid for Document Storage 
+    documentStoragePid = 
+
+    # cat=pt_gsapdfdocs::general/enable/050; type=string; label=Creator: Creator of the Voucher PDF Document.
+    additionalMarkers.creator = GSA: pt_gsapdfdocs
+
+    # cat=pt_gsapdfdocs::general/enable/060; type=string; label=keywords: Keywords for the Document.
+    additionalMarkers.keywords = Invoices, shop
+    
+    # cat=pt_gsapdfdocs::general/enable/070; type=string; label=Contact Phonenumber: Phonenumber of Contact printed on the voucher Document.
+    additionalMarkers.contactPhoneNumber = 
+    
+  
+  
+    // File settings
+    
+    # cat=pt_gsapdfdocs::general/file/110; type=file[xml]; label=Invoice templatefile: The templatefile for the invoice pdf doument (template for the Smarty templating engine).
+    xmlSmartyTemplate = EXT:pt_gsapdfdocs/res/smarty_tpl/invoice.xml
+    
+    # cat=pt_gsapdfdocs::general/file/120; type=file[xml]; label=Locallang file: The file with locallang labels for the Documents to be generated 
+	languageFile = EXT:pt_gsapdfdocs/res/smarty_tpl/locallang.xml 
+
+    # cat=pt_gsapdfdocs::general/file/130 type=string; label=Invoice Path: The path to the Invoice PDF Documents.
+    invoicePath = fileadmin/invoices/###GSAUIDMOD100###/###GSAUID###/###RELATEDERPDOCNO###.pdf
+
+    # cat=pt_gsapdfdocs::general/file/140; type=file[xml]; label=PDF Background: The bakground PDF file with copmany logo and information
+    additionalMarkers.backgroundPdf = EXT:pt_gsapdfdocs/res/smarty_tpl/background.pdf
+
+    # cat=pt_gsapdfdocs::general/file/150; type=file[gif,png,jpg]; label=Image PDF Document Signed: The image for PDF signed 
+    signedImg = typo3conf/ext/pt_gsapdfdocs/res/img/signed.png
+    
+    # cat=pt_gsapdfdocs::general/file/160; type=file[gif,png,jpg]; label=Image PDF Document not Signed: The image for PDF not signed 
+    notSignedImg = 
+    
+}

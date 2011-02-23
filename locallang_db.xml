@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Language labels for database tables/fields of the extension pt_gsapdfdocs</description>
+        <type>database</type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="irrePdfDocuments">PDF Documents</label>
+            <label index="tx_ptgsapdfdocs_documents">PDF Documents</label>
+            <label index="tx_ptgsapdfdocs_documents.documenttype">Document type</label>
+            <label index="tx_ptgsapdfdocs_documents.documenttype.invoice">Invoice</label>
+            <label index="tx_ptgsapdfdocs_documents.documenttype.manifest">Manifest</label>
+            <label index="tx_ptgsapdfdocs_documents.file">File</label>
+            <label index="tx_ptgsapdfdocs_documents.ow_uid">Order wrapper uid</label>
+            <label index="tx_ptgsapdfdocs_documents.gsa_customer_id">GSA customer ID</label>
+            <label index="tx_ptgsapdfdocs_documents.signProcessing">Sign in Process</label>
+            <label index="tx_ptgsapdfdocs_documents.signed">Signed</label>
+			<label index="tt_content.list_type_controller_download">[pt_gsapdfdocs] download</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="irrePdfDocuments">PDF Dokumente</label>
+            <label index="tx_ptgsapdfdocs_documents">PDF Dokumente</label>
+            <label index="tx_ptgsapdfdocs_documents.documenttype">Dokumenttyp</label>
+            <label index="tx_ptgsapdfdocs_documents.documenttype.invoice">Rechnung</label>
+            <label index="tx_ptgsapdfdocs_documents.documenttype.manifest">Lieferschein</label>
+            <label index="tx_ptgsapdfdocs_documents.file">Datei</label>
+            <label index="tx_ptgsapdfdocs_documents.ow_uid">Order wrapper uid</label>
+            <label index="tx_ptgsapdfdocs_documents.gsa_customer_id">GSA Kunden-ID</label>
+            <label index="tx_ptgsapdfdocs_documents.signProcessing">Signierung in Berabeitung</label>
+            <label index="tx_ptgsapdfdocs_documents.signed">Signiert</label>
+            <label index="tt_content.list_type_controller_download">[pt_gsapdfdocs] Download</label>
+        </languageKey>
+    </data>
+</T3locallang>

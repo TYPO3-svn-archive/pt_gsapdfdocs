@@ -1,0 +1,53 @@
+
+********************************************************************************
+DevDoc.txt: Entwicklungs-Notizen zur EXT pt_gsapdfdocs
+
+********************************************************************************
+
+
+ToDo: Stand 06.07.2009
+==== 
+  	 
+v0.0.1dev:
+----------
++ (ry25) changed the call of tx_ptgsashop_orderWrapper to no create a complete order object
++ (ry44/ry42) some corrections to price handling in the invoice.xml template
++ (ry44) implemented tx_ptgsapdfdocs_manifest::loadByRelatedErpDocNo() and ::loadByOrderWrapperUid()
++ (ry44) added "generatePdfsInFixFinalOrderHook" Option in ext_conf_template, which is checked by default (but has to be updated the first time of course to be set!)
+  + only if this flag is set the hook will be registered and executed. 
++ (ry42) tx_ptgsapdfdocs_document:setFromGivenArray: Bugfix $this->orderWrapperUid instead of $this->orderWrapperId
+    + ext_localconf.php: fixFinalOrderHook now in tx_ptgsashop_orderProcessor
+    + new class tx_ptgsashop_orderPresentator for fixFinalOrderHook only orderWrapper is now delivered in params
++ (ry44) tx_ptgsapdfdocs_documentAccessor::selectDocumentByRelatedErpDocNo() gelöscht (denn es gibt ja nicht _ein_ Dokument pro RelatedErpDocNumber)
+  + tx_ptgsapdfdocs_documentAccessor::selectDocument_s_ByRelatedErpDocNo() hinzugefügt
+  + tx_ptgsapdfdocs_documentAccessor::selectDocumentsByOrderWrapperUid() hinzugefügt
+  + tx_ptgsapdfdocs_invoice::loadByRelatedErpDocNo() hinzugefügt
+  + tx_ptgsapdfdocs_invoice::loadByOrderWrapperUid() hinzugefügt
+  + tx_ptgsapdfdocs_invoice::loadOutOfDocumentsArray() hinzugefügt
+  + tx_ptgsapdfdocs_controller_download so angepasst, dass nun einfach ein invoice-Objekt erzeugt wird. Das kümmert sich dann selbst um den Rest
++ (ry44) tx_ptgsapdfdoc_document::get_uid() hinzugefügt
++ (ry44) tx_ptgsapdfdoc_manifest ausprogrammiert 
+  + template manifest.xml hinzugefügt
++ (ry42) invoice.xml: Font vor newline zurücksetzen, snippet kommt als xml deshalb html_entity_decode für snippet, 
+         zusätzlich Zahlunsbetrag ausgeben falls condition gesetzt, in Zahlungsnotiz Zahlungsbetrag ausgeben anstatt Bestellsumme
+         locallang.xml: Neuer Label paymentSumTotal
++ (ry37) tx_ptgsapdfdocs_controller_download::downloadInvoiceAction(): Umstellung auf tx_pttools_exceptionAuthentication, die per Default keine Infos preisgibt
++ (ry37) tx_ptgsapdfdocs_controller_download::_downloadFile(): FE-Ausgabe des Pfades by Assertion entfernt
++ (ry44) Hook in class.tx_ptgsapdfdocs_invoice.php eingebaut
+  + Schleife zum darstellen von Inhalten in $afterTableSnippets eingebaut
++ (ry42) Signierung von Dokumenten  
+  - Erweiterungen von ext_tables.sql, ext_tables.php, locallang_db.xml, tca_pt_gsapdfdocs.php, neue Tabellenfelder signProcessing, signed 
+  - tx_ptgsapdfdocs_documentAccessor: Neue Methoden updateDocument(), getDocumentIdArr(), selectDocumentByUid
+        tx_pttools_assert::isValidUid verbessert
+  - tx_ptgsapdfdocs_document: neue Properties $signProcessing, signed + Setter, neu Methoden, setSigned, setSignProcessing, get_file()         
+  - constants.txt, setup.txt Pfad zu Bild for PDF signed
+  - ext_conf_template.txt Pfade zu signed und usigned Directories, Zeit in der signiertes PDF-Dokument existieren muß im signed Directory, Einstellungen für CLI loggin
+  - neue Klasse class.tx_ptgsapdfdocs_documentCollection.php
+  - neue cronmod directory mit cli Skript für signProcessing class.tx_ptgsapdfdocs_pdf.sign 
++ (ry37) BUGFIX: tx_ptgsapdfdocs_document: tx_pttools_assert::isValidUid() Aufrufe korrigiert
++ (ry37) BUGFIX: tx_ptgsapdfdocs_hooks_ptgsashop_pi3::processOrderSubmission_fixFinalOrderHook(): Bugfix in Datums-Markern (Jahr/Tag waren verdreht)
++ (ry37) Neues DB-Feld gsa_customer_id hinzugefügt  -> ***** ACHTUNG: nach Update DB-Feld muss im Ext.Mgr. gesetzt werden!!!! *****
+  - Erweiterungen von ext_tables.sql, locallang_db.xml, tca_pt_gsapdfdocs.php, tx_ptgsapdfdocs_documentAccessor::insertDocument()
+  - tx_ptgsapdfdocs_document: neue Property $gsaCustomerId + Setter, Aufruf von tx_ptgsapdfdocs_documentAccessor::insertDocument() angepasst
+  - tx_ptgsapdfdocs_hooks_ptgsashop_pi3::processOrderSubmission_fixFinalOrderHook(): Aufruf von $pdfInvoice->set_gsaCustomerId() hinzugefügt
++ (ry37) ext_emconf.php:  'version' => '0.0.1dev', pt_xml2pdf zu 'dependencies' hinzugefuegt

@@ -1,0 +1,36 @@
+config.pt_gsapdfdocs {
+ 	
+ 	generateInvoiceAfterOrderSubmit = {$config.tx_ptgsapdfdocs.generateInvoiceAfterOrderSubmit}
+ 	
+ 	xmlSmartyTemplate = {$config.tx_ptgsapdfdocs.xmlSmartyTemplate}
+ 	
+ 	languageFile = {$config.tx_ptgsapdfdocs.languageFile}
+ 	
+ 	invoicePath = {$config.tx_ptgsapdfdocs.invoicePath}
+ 	
+ 	documentStoragePid = {$config.tx_ptgsapdfdocs.documentStoragePid} 
+
+    signedImg = {$config.tx_ptgsapdfdocs.signedImg} 
+
+    notSignedImg = {$config.tx_ptgsapdfdocs.notSignedImg} 
+ 	
+ 	additionalMarkers {
+ 		backgroundPdf = {$config.tx_ptgsapdfdocs.additionalMarkers.backgroundPdf}
+ 		creator = {$config.tx_ptgsapdfdocs.additionalMarkers.creator}
+ 		keywords = {$config.tx_ptgsapdfdocs.additionalMarkers.keywords}
+ 		contactPhoneNumber = {$config.tx_ptgsapdfdocs.additionalMarkers.contactPhoneNumber}
+	}
+    
+}
+
+plugin.tx_ptgsapdfdocs_controller_download {
+
+	linkLabel = Invoice
+
+	typoLinkConf {
+		parameter = 600x450
+		ATagParams = id="tx-ptgsapdfdocs-invoicelink"
+		
+	}
+	
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>language labels for pdf generation</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="combinedInvoiceAndManifest">Invoice / Manifest</label>
+			<label index="invoice">Invoice</label>
+			<label index="manifest">Manifest</label>
+			<label index="date">Date</label>
+			<label index="orderNo">Order-No.</label>
+			<label index="username">Username</label>
+			<label index="vatUid">VAT-ID</label>
+			<label index="invoiceNo">Invoice-No.</label>
+			<label index="shippingAddress">(shipping to: "%s")</label>
+			<label index="deliveryNo">Delivery No. %s</label>
+			<label index="tableHeadings">Amount,Product,Price,Total</label>
+			<label index="tableHeadingsManifest">Amount,Product</label>
+			<label index="sumArticles">Article sum</label>
+			<label index="artNo">(Art.-no.: %s)</label>
+			<label index="plusDeliveryCostsForDelivery">plus delivery costs for delivery %s</label>
+			<label index="plusDeliveryCostsSum">plus delivery costs</label>
+			<label index="totalSum">Total</label>
+			<label index="totalSumNet">Total (net)</label>
+			<label index="totalSumGross">Total (gross)</label>
+            <label index="paymentSumTotal">Payment amount</label>
+			<label index="plusTaxes">plus %s%% taxes</label>
+			<label index="includedTaxes">%s%% taxes included</label>
+			<label index="paymentNoticeCC">The order total (%s) will be debited from your credit card.</label>
+			<label index="paymentNoticeDD">The order total (%s) will be debited from your account %s  (Bank: %s, Code: %s) within in the next 7 days.</label>
+			<label index="paymentNoticeBT">You decided to pay per bank transfer.\nPlease transfer the total amount within 7 days after receiving the goods to our bank account.\nAmount total: %s\nReason for payment: %s\nBank: %s (BLZ: %s), Account No.: %s</label>
+			<label index="paymentNoticeBTForeign">You decided to pay per bank transfer.\nPlease transfer the total amount within 7 days after receiving the goods to our bank account.\nAmount total: %s\nReason for payment: %s\nBank: %s (BLZ: %s), Account No.: %s\nBIC: %s, IBAN: %s</label>
+			<label index="questionsNote">If you have questions regarding this invoice, feel free to write us an e-mail to %s or give us a call at %s</label>
+			<label index="page">- Page %s -</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="combinedInvoiceAndManifest">Rechnung / Lieferschein</label>
+			<label index="invoice">Rechnung</label>
+			<label index="manifest">Lieferschein</label>
+			<label index="date">Datum</label>
+			<label index="orderNo">Auftrags-Nr.</label>
+			<label index="username">Benutzername</label>
+			<label index="vatUid">UStId</label>
+			<label index="invoiceNo">Rechnungs-Nr.</label>
+			<label index="shippingAddress">(Versand an: "%s")</label>
+			<label index="deliveryNo">Lieferung Nr. %s</label>
+			<label index="tableHeadings">Anzahl,Produkt,Einzelpreis,Gesamtpreis</label>
+			<label index="tableHeadingsManifest">Anzahl,Produkt</label>
+			<label index="sumArticles">Summe Artikel / Warenwert</label>
+			<label index="artNo">(Art.-Nr.: %s)</label>
+			<label index="plusDeliveryCostsForDelivery">zzgl. Versandkosten für Lieferung %s</label>
+			<label index="plusDeliveryCostsSum">zzgl. Versandkosten</label>
+			<label index="totalSum">Gesamtsumme</label>
+			<label index="totalSumNet">Gesamtsumme (netto)</label>
+			<label index="totalSumGross">Gesamtsumme (brutto)</label>
+            <label index="paymentSumTotal">Zahlungsbetrag</label>
+			<label index="plusTaxes">zzgl. %s%% MwSt.</label>
+			<label index="includedTaxes">davon %s%% MwSt.</label>
+			<label index="paymentNoticeCC">Der Betrag (%s) wird von Ihrer Kreditkarte abgebucht.</label>
+			<label index="paymentNoticeDD">Der Betrag (%s) wird in den nächsten Tagen von Ihrem Konto %s bei der %s (BLZ: %s) abgebucht.</label>
+			<label index="paymentNoticeBT">Sie haben sich für die Bezahlung per Banküberweisung entschieden.\nBitte überweisen Sie den Betrag innerhalb von 7 Tagen nach Erhalt der Ware auf unser Konto:\nZahlungsbetrag: %s\nVerwendungszweck: %s\nBank: %s (BLZ: %s), Konto-Nr.: %s</label>
+			<label index="paymentNoticeBTForeign">Sie haben sich für die Bezahlung per Banküberweisung entschieden.\nBitte überweisen Sie den Betrag innerhalb von 7 Tagen nach Erhalt der Ware auf unser Konto:\nZahlungsbetrag: %s\nVerwendungszweck: %s\nBank: %s (BLZ: %s), Konto-Nr.: %s\nBIC: %s, IBAN: %s</label>
+			<label index="questionsNote">Fragen oder Anmerkungen zur Rechnung? Schreiben Sie uns eine E-Mail an %s oder rufen Sie uns an unter der %s.</label>
+			<label index="page">- Seite %s -</label>
+        </languageKey>
+    </data>
+</T3locallang>
